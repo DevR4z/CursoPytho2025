@@ -1,11 +1,14 @@
 # %%
-def soma(i:float, j:float):
-    return i + j
+def soma(a:float, b:float, *args):
+    valores = [a,b] + list(args)
+    return sum(valores)
 
-def media(i:float, j:float):
-    return soma(i,j) / 2
+def media(a:float, b:float, *args):
+    return soma(a, b, *args) / (len(args)+2)
 
-i = float(input("Entre com o primeiro valor: "))
-j = float(input("Entre com o valor de "))
+a = float(input("Entre com o primeiro valor: "))
+b = float(input("Entre com o segundo valor: "))
+c = float(input("Entre com o terceiro valor: "))
+d = float(input("Entre com o quarto valor: "))
 
-print("Média", media(i,j))
+print("Média", media(a,b,c,d))
